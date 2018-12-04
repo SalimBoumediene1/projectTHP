@@ -22,10 +22,9 @@
     <div id="map"></div>
 </p>
 <% provide :head_tags do %>
-  <meta name='turbolinks-visit-control' content='reload'># use with turbolink to reload the page
   <script>
   document.addEventListener("DOMContentLoaded", function(){
       initMap(<%=@place.latitude%>, <%=@place.longitude%>)
   });
   </script>
-  <% end %>
+<% end %>
