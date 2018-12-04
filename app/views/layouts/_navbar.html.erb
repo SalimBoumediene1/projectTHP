@@ -1,0 +1,30 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+	<link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700" rel="stylesheet">
+
+
+
+<div class="menu"> <span></span> </div>
+<nav id="nav">
+		<ul class="main">
+				<li><a target="_blank" href="https://www.facebook.com/ravi7284007">Hi There! Ravi</a></li>
+				<li><a target="_blank" href="https://www.facebook.com/ravi7284007">About ME</a></li>
+				<li><a href="#">Web Development</a></li>
+				<li><a href="#">Digital Marketing</a></li>
+				<li><a target="_blank" href="https://www.instagram.com/ravi_singh_7/">Portfolio</a></li>
+				<li><a target="_blank" href="https://500px.com/ravi7284007">Contact</a></li>
+		</ul>
+</nav>
+<div class="overlay"></div>
+
+<script>
+$('.menu, .overlay').click(function () {
+	$('.menu').toggleClass('clicked');
+	
+	$('#nav').toggleClass('show');
+	
+});
+</script>
