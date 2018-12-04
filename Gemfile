@@ -7,6 +7,7 @@ gem 'gmaps4rails'
 gem 'google-api-client', '~> 0.11'
 gem 'open-weather'
 gem 'devise'
+gem 'underscore-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.1'
