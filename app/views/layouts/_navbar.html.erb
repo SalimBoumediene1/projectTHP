@@ -1,13 +1,49 @@
 
 <div class="menu"> <span></span> </div>
 <nav id="nav">
-		<ul class="main">
-				<li><a target="_blank" href="https://www.facebook.com/ravi7284007">Hi There! Ravi</a></li>
-				<li><a target="_blank" href="https://www.facebook.com/ravi7284007">About ME</a></li>
-				<li><a href="#">Web Development</a></li>
-				<li><a href="#">Digital Marketing</a></li>
-				<li><a target="_blank" href="https://www.instagram.com/ravi_singh_7/">Portfolio</a></li>
-				<li><a target="_blank" href="https://500px.com/ravi7284007">Contact</a></li>
-		</ul>
+<ul class="main">
+<% if user_signed_in? %>
+
+<li>
+	<%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+</li>
+
+<li>
+<%= link_to 'My Acount', items_profil_path%>
+</li>
+
+<li>
+	<%= link_to 'Panier',  cart_path(current_user.cart.id)%>
+</li>
+
+<li>
+	<%= link_to 'Edit', edit_user_registration_path %>
+</li>
+<li>
+	<%= link_to 'acceuil', home_index_path %>
+</li>
+
+
+	<%else%>
+	<li>
+	<%= link_to 'Acceuil', home_index_path %>
+</li>
+		   <li>
+			   <%= link_to 'Sign in/Sign Up', new_user_session_path %>
+		   </li>
+
+	
+		   
+	   <% end %>
+</ul>
 </nav>
 <div class="overlay"></div>
+
+<script>
+$('.menu, .overlay').click(function () {
+	$('.menu').toggleClass('clicked');
+	
+	$('#nav').toggleClass('show');
+	
+});
+</script>
