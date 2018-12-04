@@ -8,13 +8,9 @@
 	<%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
 </li>
 
-<li>
-<%= link_to 'My Acount', items_profil_path%>
-</li>
 
-<li>
-	<%= link_to 'Panier',  cart_path(current_user.cart.id)%>
-</li>
+
+
 
 <li>
 	<%= link_to 'Edit', edit_user_registration_path %>
