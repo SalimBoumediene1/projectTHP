@@ -18,6 +18,14 @@
         <td><%= place.name %></td>
         <td><%= place.latitude %></td>
         <td><%= place.longitude %></td>
+
+          <meta name='turbolinks-visit-control' content='reload'>
+          <script>
+            document.addEventListener("DOMContentLoaded", function(){
+              initMap(<%=place.latitude%>, <%=place.longitude%>)
+            });
+          </script>
+
         <td><%= link_to 'Show', place %></td>
         <td><%= link_to 'Edit', edit_place_path(place) %></td>
         <td><%= link_to 'Destroy', place, method: :delete, data: { confirm: 'Are you sure?' } %></td>
