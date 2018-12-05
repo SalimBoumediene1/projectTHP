@@ -8,6 +8,8 @@ gem 'google-api-client', '~> 0.11'
 gem 'open-weather'
 gem 'underscore-rails'
 gem 'devise'
+gem 'faker'
+gem 'nokogiri'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.1'
