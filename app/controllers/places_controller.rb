@@ -5,6 +5,8 @@ class PlacesController < ApplicationController
   # GET /places.json
   def index
     @places = Place.all
+    @meteo = Meteo.new
+    
   end
 
   # GET /places/1

@@ -13,7 +13,6 @@
 //= require rails-ujs
 //= require gmaps/google
 //= require activestorage
-//= require turbolinks
 //= require_tree .
 /*
 * = require_self
