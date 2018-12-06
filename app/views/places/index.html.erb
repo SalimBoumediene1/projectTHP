@@ -12,29 +12,22 @@
     </tr>
   </thead>
 
-  <div class="container">
+  <div>
     <% @places.each do |place| %>
-    <div class="card" style="width: 18rem;">
-<%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=17&size=400x300&markers=size:small%7Ccolor:red%7C#{place.latitude},#{place.longitude}&key=#{Rails.application.credentials.api_key_map}", class: "card-img-top" %>
-  <div class="card-body bg-primary">
-    <p class=""><%= place.name%></p>
-    <p><%=place.description%></p>
-    <img src=http://openweathermap.org/img/w/<%= @meteo.get_values(place.longitude, place.latitude)["weather"][0]["icon"]%>.png>
-    <div><%=(@meteo.get_values(place.longitude, place.latitude)["main"]["temp_min"]-273.15).round(0)%>°C, </div>
- <a href="#" class="btn btn-primary">Voir</a>
+    <div class="card">
+      <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=17&size=400x300&markers=size:small%7Ccolor:red%7C#{place.latitude},#{place.longitude}&key=#{Rails.application.credentials.api_key_map}", class: "card-img-top" %>
+      <div class="card-body bg-warning">
+      <p class=""><%= place.name%></p>
+      <p><%=place.description%></p>
+      <img src=http://openweathermap.org/img/w/<%= @meteo.get_values(place.longitude, place.latitude)["weather"][0]["icon"]%>.png>
+      <div><%=(@meteo.get_values(place.longitude, place.latitude)["main"]["temp_min"]-273.15).round(0)%>°C, </div>
+      <%= link_to 'Voir la carte', place, class: "btn btn-primary" %>
+    </div>
   </div>
-</div>
       <tr>
         <td><%= place.name %></td>
         <td><%= place.latitude %></td>
         <td><%= place.longitude %></td>
-
-          <meta name='turbolinks-visit-control' content='reload'>
-          <script>
-            document.addEventListener("DOMContentLoaded", function(){
-              initMap(<%=place.latitude%>, <%=place.longitude%>)
-            });
-          </script>
 
         <td><%= link_to 'Show', place %></td>
         <td><%= link_to 'Edit', edit_place_path(place) %></td>
